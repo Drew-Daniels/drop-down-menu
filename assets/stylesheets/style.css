@@ -60,6 +60,10 @@ nav {
   background-color: #e07a5f;
 }
 
+ul {
+  overflow: auto;
+}
+
 header {
   display: flex;
   font-size: 2em;
@@ -99,8 +103,21 @@ button {
   max-width: 2em;
 }
 
-.hidden {
-  display: none;
+.menu {
+  height: 0;
+  transition: height 1s ease-out;
+}
+
+.menu.visible {
+  height: 100px;
+}
+
+.menu-btn-img {
+  transition: all 1s ease-out;
+}
+
+.menu-btn-img.visible {
+  transform: rotate(-180deg);
 }
 
 /*# sourceMappingURL=style.css.map */

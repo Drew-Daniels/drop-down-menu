@@ -1,9 +1,9 @@
-const unhide = function(element, hideClass) {
-  element.classList.remove(hideClass);
+const unhide = function(element, visibleClass) {
+  element.classList.add(visibleClass);
 }
 
-const hide = function(element, hideClass) {
-  element.classList.add(hideClass);
+const hide = function(element, visibleClass) {
+  element.classList.remove(visibleClass);
 }
 
 const getClasses = function(element) {
@@ -25,31 +25,28 @@ const declassify = function(element, ...classesToRemove) {
   })
 }
 
-const addListeners = function(btn, list, hideClass, btnImages) {
+const add = function(btn, list, visibleClass, btnImage) {
   btn.addEventListener('click', 
     function() {
       const listClasses = getClasses(list);
-      const hidden = listClasses.includes(hideClass);
-      if (hidden) {
-        unhide(list, hideClass);
+      const visible = listClasses.includes(visibleClass);
+      if (visible) {
+        hide(list, visibleClass);
       } else {
-        hide(list, hideClass);
+        unhide(list, visibleClass);
       }
     }
   );
+  // TODO: Add in functionality to turn the btnImage 180deg
   btn.addEventListener('click',
     function() {
-      let imgClasses;
-      let hidden;
-      [...btnImages].forEach(function(img) {
-        imgClasses = getClasses(img);
-        hidden = imgClasses.includes(hideClass);
-        if (hidden) {
-          declassify(img, hideClass);
-        } else {
-          classify(img, hideClass);
-        }
-      })
+      const imgClasses = getClasses(btnImage);
+      const visible = imgClasses.includes(visibleClass);
+      if (visible) {
+        declassify(btnImage, visibleClass);
+      } else {
+        classify(btnImage, visibleClass);
+      }
     }
   );
 }
@@ -60,5 +57,5 @@ export {
   getClasses,
   classify,
   declassify,
-  addListeners,
+  add,
 }

@@ -5,6 +5,9 @@
 nav {
   background-color: colors.$bg-color-2;
 }
+ul {
+  overflow: auto;
+}
 header {
   display: flex;
   font-size: fonts.$xlarge;
@@ -38,6 +41,17 @@ button {
 .github-icon {
   max-width: 2em;
 }
-.hidden {
-  display: none;
+.menu {
+  height: 0;
+  transition: height 1s ease-out;
+}
+.menu.visible {
+  // TODO: Find a way to calculate this dynamically
+  height: 100px;
+}
+.menu-btn-img {
+  transition: all 1s ease-out;
+}
+.menu-btn-img.visible {
+  transform: rotate(-180deg);
 }
