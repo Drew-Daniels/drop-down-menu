@@ -86,13 +86,13 @@ button {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #f4f1de;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: #f4f1de;
 }
 
 .github-icon {

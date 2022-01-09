@@ -28,12 +28,12 @@ button {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: colors.$bg-color-1;
 }
 .content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: colors.$bg-color-1;
 }
 .github-icon {
   max-width: 2em;
