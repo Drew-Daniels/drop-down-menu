@@ -5,14 +5,19 @@
     <title>Drop Down Menu</title>
     <link rel="stylesheet" href="assets/stylesheets/style.css">
     <link rel="shortcut icon" href="assets/images/icons/menu-icon.svg">
+    <script src="assets/js/index.js" defer></script>
   </head>
   <body>
     <div class="content-container">
       <header>Drop Down Menu Demo</header>
       <main class="content">
         <nav>
-          Drop Down Menu
-          <ul class="hidden">
+          <button class="menu-button">
+            <img src="assets/images/icons/expand-icon.svg" alt="Down Arrow" class="menu-btn-image">
+            <img src="assets/images/icons/hide-icon.svg" alt="Up Arrow" class="menu-btn-image hidden">
+            <span>View Menu</span>
+          </button>
+          <ul class="menu hidden">
             <li>Menu Item 1</li>
             <li>Menu Item 2</li>
             <li>Menu Item 3</li>
